@@ -1,67 +1,10 @@
 import React from "react";
-import nepallogo from "../assets/Image/IRD_Nepal_1.png";
-import bnnlogo from "../assets/Image/Logo BNM.jpg";
-import nepalflag from "../assets/Image/flag.gif";
-import { BiArrowBack } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import Login from "./Login";
-import { SiGnu } from "react-icons/si";
-import SignUp from "./Signup";
-import Personalinfo from "../Form/Personalinfo";
-import Dashboard from "../Dashboard";
-import Footer from "../Footer";
-
 const Homepage = () => {
   return (
     <div className="flex flex-col  gap-5 px-5 laptop:px-0 my-10 mx-auto ">
-      <section className="flex flex-col  ">
-        <div className="grid grid-cols-3 px-10">
-          <img className="hidden tablet:block tablet:max-w-28 tablet:h-auto tablet:mt-10" src={nepallogo} alt="Logo" />
-          <div className="flex flex-col justify-center items-center gap-2">
-            <h1 className="text-[#265CC0] text-xl font-semibold">
-              वीरेन्द्रनगर नगरपालिका,
-            </h1>
-            <p className="text-[#b83955] text-3xl font-semibold">
-              कृषि विभागको कार्यालय
-            </p>
-            <span className="text-[#b83955] text-3xl font-semibold">
-              कर्णाली प्रदेश,
-            </span>
-          </div>
-
-          <div className="flex flex-row justify-end items-end gap-3 ">
-            <img className="hidden tablet:block tablet:max-w-24 tablet:h-auto" src={bnnlogo} alt="Logo" />
-            {/* <img className="w-60 h-auto" src={nepalflag} alt="Logo" /> */}
-          </div>
-        </div>
-      </section>
+  
       <section className="flex flex-col gap-10">
-        <div className="bg-[#0d6efd] w-full flex  justify-between items-center  py-3 flex-row ">
-          <div>
-            <ul className="flex  justify-center items-center gap-10 px-20 ">
-              <Link
-                to={"/dashboard"}
-                className="text-base font-normal text-[#fff]"
-              >
-                गृह पृष्ठ
-              </Link>
-              <li className="text-base font-normal text-[#fff]">
-                हाम्रो बारेमा{" "}
-              </li>
-              <li className="text-base font-normal text-[#fff]">
-                सूचना तथा समाचार{" "}
-              </li>
-            </ul>
-          </div>
-          <div className="flex gap-10 px-20">
-          <Link to={"/Personalinfo"} className="text-base font-normal text-[#fff]">
-              दर्ता गर्नुहोस्
-            </Link>
-            <Link to={"/login"} className="text-base font-normal text-[#fff]">
-              लग-इन गर्नुहोस्
-            </Link>
-          </div>
-        </div>
         <div className="flex  gap-5 mx-10">
           <div className=" flex flex-col w-3/5 gap-5 ">
             <button className="bg-[#FF0000] text-base font-semibold px-2 py-1 rounded  text-[#ffff]">
@@ -130,9 +73,9 @@ const Homepage = () => {
       </section>
       <section className="flex justify-center items-center flex-col">
        <h1 className="text-8xl text-red-600  py-20" >     Map Section</h1>
-   <Link to={"Login"} className="py-2 px-10 bg-blue-600 rounded text-white ">Login</Link>
+
       </section>
-      <Footer />
+      
     </div>
   );
 };

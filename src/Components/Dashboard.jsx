@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "./Sidebar";
-import Navbar from "./Navbar";
+import Bar from "../Components/Bar";
 
 const Dashboard = () => {
   return (
@@ -10,7 +10,7 @@ const Dashboard = () => {
           <Sidebar />
         </div>
         <div className="basis-[88%]  ">
-          <Navbar />
+          <Bar/>
         </div>
       </div>
     </>
