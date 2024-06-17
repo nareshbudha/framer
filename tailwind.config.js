@@ -10,6 +10,8 @@ export default {
       fontFamily: {
         Roboto: ["Roboto", "sans-serif"],
       },
+     
+      
       screens: {
         mobile: "390px",
         tablet: "712px",
