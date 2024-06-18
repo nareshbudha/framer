@@ -1,27 +1,18 @@
 import React, { useState } from "react";
-import jsPDF from "jspdf";
-import Calendars from "../Form/Calendars";
+import Calendars from "./Calendars";
 import { Link } from "react-router-dom";
 import FarmerAddress from "./Farmeraddress";
-("");
 
-const Personalinfo = () => {
+const Agriculturefarmregistertion = () => {
   const [formData, setFormData] = useState({
-    "परिचय पत्र नं": "",
-    "नागरिकता न.": "",
-    नाम: "",
-    लिङ्ग: "",
-    "मोबाइल न": "",
-    "जन्म मिति": "",
-    "शैक्षिक योग्यता": "",
-    "नागरिकता जारी जिल्ला": "",
-    "कृषि कार्यको क्षेत्र": "",
-    "तपाईं वार्षिक औसत कति महिना कृषि कार्यमा संलग्न हुनुहुन्छ?": "",
+    "कृषि व्यवसाय / फर्म": "",
+    ठेगाना: "",
+    "दर्ता नम्बर": "",
+    "दर्ता मिति": "",
+    "दर्ता भएको कार्यालय": "",
+    "फर्मको किसिम": "",
+    "वार्षिक रोजगारी सिर्जना": "",
   });
-  const toNepaliNumerals = (number) => {
-    const nepaliNumerals = ["०", "१", "२", "३", "४", "५", "६", "७", "८", "९"];
-    return number.toString().replace(/\d/g, (d) => nepaliNumerals[d]);
-  };
 
   const [tableData, setTableData] = useState([]);
 
@@ -44,20 +35,16 @@ const Personalinfo = () => {
     e.preventDefault();
     setTableData((prevTableData) => [...prevTableData, formData]);
     setFormData({
-      "परिचय पत्र नं": "",
-      "नागरिकता न.": "",
-      नाम: "",
-      लिङ्ग: "",
-      "मोबाइल न": "",
-      "जन्म मिति": "",
-      "शैक्षिक योग्यता": "",
-      "नागरिकता जारी जिल्ला": "",
-      "कृषि कार्यको क्षेत्र": "",
-      "तपाईं वार्षिक औसत कति महिना कृषि कार्यमा संलग्न हुनुहुन्छ?": "",
+      "कृषि व्यवसाय / फर्म": "",
+      ठेगाना: "",
+      "दर्ता नम्बर": "",
+      "दर्ता मिति": "",
+      "दर्ता भएको कार्यालय": "",
+      "फर्मको किसिम": "",
+      "वार्षिक रोजगारी सिर्जना": "",
     });
   };
 
-  //   const generatePDF = () => {
   //     const doc = new jsPDF();
   //     let yOffset = 10;
 
@@ -96,28 +83,31 @@ const Personalinfo = () => {
 
   return (
     <div className="flex flex-col justify-between gap-5 px-5 laptop:px-0 my-10 mx-auto max-w-[1800px]">
-       <div className="flex flex-col gap-2">
-          <p className="text-[#3C763D] bg-[#DFF0D8] font-bold rounded p-2 text-xl tablet:text-2xl tabletmd:text-3xl">
-            व्यक्तिगत विवरण
-          </p>
-        </div>
-      <form className="grid-1 border-green-200 border-2 p-3 rounded-lg " onSubmit={handleSubmit}>
-       
+      <div className="flex flex-col gap-2">
+        <p className="text-[#3C763D] bg-[#DFF0D8] font-bold rounded p-2 text-xl tablet:text-2xl tabletmd:text-3xl">
+          कृषि व्यवसाय/फर्म/उद्यम दर्ता
+        </p>
+      </div>
+      <form
+        className="grid-1 border-green-200 border-2 p-3 rounded-lg "
+        onSubmit={handleSubmit}
+      >
         <div className="text-[#000000] grid tablet:grid-cols-4 gap-4 pt-10">
           {/* Form fields */}
           <div className="relative gap-2 flex flex-col">
             <p className="font-semibold text-sm tablet:text-base tablet:font-bold">
-              परिचय पत्र नं:
+              कृषि व्यवसाय / फर्म / उद्यमको किसानको नाम:
             </p>
             <input
               className="border-[#D0D7E2] border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3 text-sm tablet:text-base"
-              type="number"
-              name="परिचय पत्र नं"
-              value={formData["परिचय पत्र नं"]}
+              type="text"
+              placeholder="बुढा एग्रीकल्चर फार्म प्रा. लि"
+              name="कृषि व्यवसाय / फर्म"
+              value={formData["कृषि व्यवसाय / फर्म"]}
               onChange={handleChange}
             />
           </div>
-          <div className="relative gap-2 flex flex-col">
+          {/* <div className="relative gap-2 flex flex-col">
             <p className="font-semibold text-sm tablet:text-base tablet:font-bold">
               नागरिकता न.:
             </p>
@@ -128,124 +118,95 @@ const Personalinfo = () => {
               value={formData["नागरिकता न."]}
               onChange={handleChange}
             />
-          </div>
+          </div> */}
           <div className="relative gap-2 flex flex-col">
             <p className="font-semibold text-sm tablet:text-base tablet:font-bold">
-              नाम:
+              ठेगाना:
             </p>
             <input
               className="border-[#D0D7E2] border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3 text-sm tablet:text-base"
               type="text"
-              name="नाम"
-              value={formData["नाम"]}
+              placeholder="कर्णाली प्रदेश सुर्खेत बीरेन्द्रनगर नगरपालिका ७"
+              name="ठेगाना"
+              value={formData["ठेगाना"]}
               onChange={handleChange}
             />
           </div>
           <div className="relative gap-2 flex flex-col">
             <p className="font-semibold text-sm tablet:text-base tablet:font-bold">
-              लिङ्ग:
-            </p>
-            <select
-              className="border-[#D0D7E2] border-[1px] flex flex-col rounded-xl px-1 py-1 text-sm tablet:text-base tabletmd:px-2 tabletmd:py-3"
-              name="लिङ्ग"
-              value={formData["लिङ्ग"]}
-              onChange={handleChange}
-            >
-              <option value="">Select an option</option>
-              <option value="पुरुष">पुरुष</option>
-              <option value="महिला">महिला</option>
-              <option value="अन्य">अन्य</option>
-            </select>
-          </div>
-          <div className="relative gap-2 flex flex-col">
-            <p className="font-semibold text-sm tablet:text-base tablet:font-bold">
-              मोबाइल नं:
+              दर्ता नम्बर:
             </p>
             <input
               className="border-[#D0D7E2] border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3 text-sm tablet:text-base"
               type="text"
-              name="मोबाइल न"
-              value={formData["मोबाइल न"]}
+              placeholder="12345678"
+              name="दर्ता नम्बर"
+              value={formData["दर्ता नम्बर"]}
               onChange={handleChange}
             />
           </div>
           <div className="relative gap-2 flex flex-col">
             <p className="font-semibold text-sm tablet:text-base tablet:font-bold">
-              जन्म मिति:
+              दर्ता मिति:
             </p>
             <Calendars
-              name="जन्म मिति"
-              value={formData["जन्म मिति"]}
+              name="दर्ता मिति"
+              value={formData["दर्ता मिति"]}
               onChange={handleDateChange}
             />
           </div>
           <div className="relative gap-2 flex flex-col">
             <p className="font-semibold text-sm tablet:text-base tablet:font-bold">
-              शैक्षिक योग्यता:
+              दर्ता भएको कार्यालय:
             </p>
             <input
               className="border-[#D0D7E2] border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3 text-sm tablet:text-base"
               type="text"
-              name="शैक्षिक योग्यता"
-              value={formData["शैक्षिक योग्यता"]}
+              placeholder="आन्तिरक राजश्व कार्यालय"
+              name="दर्ता भएको कार्यालय"
+              value={formData["दर्ता भएको कार्यालय"]}
               onChange={handleChange}
             />
           </div>
           <div className="relative gap-2 flex flex-col">
             <p className="font-semibold text-sm tablet:text-base tablet:font-bold">
-              नागरिकता जारी जिल्ला:
+              व्यवसाय/फर्म/उद्यमको किसिम:
             </p>
             <input
               className="border-[#D0D7E2] border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3 text-sm tablet:text-base"
               type="text"
-              name="नागरिकता जारी जिल्ला"
-              value={formData["नागरिकता जारी जिल्ला"]}
+              placeholder="व्यवसाय/फर्म/उद्यमको किसिम"
+              name="फर्मको किसिम"
+              value={formData["फर्मको किसिम"]}
               onChange={handleChange}
             />
           </div>
           <div className="relative gap-2 flex flex-col">
             <p className="font-semibold text-sm tablet:text-base tablet:font-bold">
-              कृषि कार्यको क्षेत्र:
+              वार्षिक रोजगारी सिर्जना(संख्या ):
             </p>
             <input
               className="border-[#D0D7E2] border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3 text-sm tablet:text-base"
               type="text"
-              name="कृषि कार्यको क्षेत्र"
-              value={formData["कृषि कार्यको क्षेत्र"]}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="relative gap-2 flex flex-col">
-            <p className="font-semibold text-sm tablet:text-base tablet:font-bold">
-              तपाईं वार्षिक औसत कति महिना कृषि कार्यमा संलग्न हुनुहुन्छ? :
-            </p>
-            <input
-              className="border-[#D0D7E2] border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3 text-sm tablet:text-base"
-              type="text"
-              name="तपाईं वार्षिक औसत कति महिना कृषि कार्यमा संलग्न हुनुहुन्छ?"
-              value={
-                formData[
-                  "तपाईं वार्षिक औसत कति महिना कृषि कार्यमा संलग्न हुनुहुन्छ?"
-                ]
-              }
+              placeholder="५ जना"
+              name="वार्षिक रोजगारी सिर्जना"
+              value={formData["वार्षिक रोजगारी सिर्जना"]}
               onChange={handleChange}
             />
           </div>
         </div>
-        <Link to={"/add/farmer-address"}>   <button
+        <Link to={"/crop/production/and/market-management"}>
+        <button
           className="px-2 py-1 text-white bg-green-400 rounded-lg my-2"
           type="submit"
         >
-         Next
-        </button></Link>
-      
+          Next
+        </button> </Link>
       </form>
 
-    
       {/* Table to display form data */}
       {/* <div className="mt-10">
         <div className="flex justify-center items-center my-3">
-        
           <p>कार्यालय :- स्थानिय तह बीरेन्द्रनगर नगरपालिका वार्ड :- ४</p>
         </div>
 
@@ -258,7 +219,7 @@ const Personalinfo = () => {
                   {fieldName}
                 </th>
               ))}
-              <th className="border border-gray-500 px-4 py-2">Status</th>
+          
             </tr>
           </thead>
           <tbody>
@@ -272,35 +233,13 @@ const Personalinfo = () => {
                     {value}
                   </td>
                 ))}
-                <td className="border border-gray-500 px-4 py-2">
-                  <button className="px-2 py-1 text-white bg-blue-400 mr-2">
-                    Edit
-                  </button>
-                  <button className="px-2 py-1 text-white bg-red-400">
-                    Delete
-                  </button>
-                </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div> */}
-
-      {/* Button to generate PDF */}
-      {/* <button
-        className="mt-5 px-4 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded"
-        onClick={generatePDF}
-      >
-        Download PDF
-      </button> */}
-
-      {/* <div className="flex justify-end bg- items-end ">
-        <button className="px-2 py-1 text-white bg-green-400 rounded-lg my-2">
-          <a href="FarmerAddress">Next </a>
-        </button>
-      </div> */}
     </div>
   );
 };
 
-export default Personalinfo;
+export default Agriculturefarmregistertion;

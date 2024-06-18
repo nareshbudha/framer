@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 const Homepage = () => {
   return (
     <div className="flex flex-col  gap-5 px-5 laptop:px-0 my-10 mx-auto ">
-  
       <section className="flex flex-col gap-10">
         <div className="flex  gap-5 mx-10">
           <div className=" flex flex-col w-3/5 gap-5 ">
@@ -11,40 +10,54 @@ const Homepage = () => {
               पछिल्लो
             </button>
             <button className="bg-[#FF0000] text-base font-semibold px-10 py-3 rounded  text-[#ffff]">
-            सूचनाहरू
+              सूचनाहरू
             </button>
             <div className="flex flex-col  h-80 w-96  overflow-scroll bottom-0 border-2 rounded">
-              <h1 className="flex flex-col justify-start text-base font-normal gap-2 py-5 px-2">
-                Medical Korea e-Class सम्बन्धमा ।
-                <p className="flex gap-2 text-sm ">
-                  प्रकाशित मिति{" "}
-                  <span className="text-[#265CC0]"> sun, 09 jun 2024</span>
-                </p>
-              </h1>
-              <hr />
-
-              <h1 className="py-5 px-2">Medical Korea e-Class सम्बन्धमा ।</h1>
-              <hr />
-
-              <h1 className="py-5 px-2">Medical Korea e-Class सम्बन्धमा ।</h1>
-              <hr />
-
-              <h1 className="py-5 px-2">Medical Korea e-Class सम्बन्धमा ।</h1>
-              <hr />
-
-              <h1 className="py-5 px-2">Medical Korea e-Class सम्बन्धमा ।</h1>
-              <hr />
-
-              <h1 className="py-5 px-2">Medical Korea e-Class सम्बन्धमा ।</h1>
-              <hr />
-
-              <h1 className="py-5 px-2">Medical Korea e-Class सम्बन्धमा ।</h1>
-              <hr />
+              <Link to={""}>
+                <h1 className="flex flex-col justify-start text-base font-normal gap-2 py-5 px-2">
+                  Medical Korea e-Class सम्बन्धमा ।
+                  <p className="flex gap-2 text-sm ">
+                    प्रकाशित मिति
+                    <span className="text-[#265CC0]"> sun, 09 jun 2024</span>
+                  </p>
+                  <hr />
+                </h1>
+              </Link>
+              <Link to={""}>
+                <h1 className="flex flex-col justify-start text-base font-normal gap-2 py-5 px-2">
+                  Medical Korea e-Class सम्बन्धमा ।
+                  <p className="flex gap-2 text-sm ">
+                    प्रकाशित मिति
+                    <span className="text-[#265CC0]"> sun, 09 jun 2024</span>
+                  </p>
+                  <hr />
+                </h1>
+              </Link>
+              <Link to={""}>
+                <h1 className="flex flex-col justify-start text-base font-normal gap-2 py-5 px-2">
+                  Medical Korea e-Class सम्बन्धमा ।
+                  <p className="flex gap-2 text-sm ">
+                    प्रकाशित मिति
+                    <span className="text-[#265CC0]"> sun, 09 jun 2024</span>
+                  </p>
+                  <hr />
+                </h1>
+              </Link>
+              <Link to={""}>
+                <h1 className="flex flex-col justify-start text-base font-normal gap-2 py-5 px-2">
+                  Medical Korea e-Class सम्बन्धमा ।
+                  <p className="flex gap-2 text-sm ">
+                    प्रकाशित मिति
+                    <span className="text-[#265CC0]"> sun, 09 jun 2024</span>
+                  </p>
+                  <hr />
+                </h1>
+              </Link>
             </div>
           </div>
           <div className=" flex flex-col  gap-5 mx-10 mt-20">
             <h1 className="flex text-3xl font-semibold text-red-700">
-              वीरेन्द्रनगर नगरपालिकाको वेभसाइटमा स्वागत छ ।
+              वीरेन्द्रनगर नगरपालिका कृषि विभागको वेभसाइटमा स्वागत छ ।
             </h1>
 
             <p>
@@ -72,10 +85,8 @@ const Homepage = () => {
         </div>
       </section>
       <section className="flex justify-center items-center flex-col">
-       <h1 className="text-8xl text-red-600  py-20" >     Map Section</h1>
-
+        <h1 className="text-8xl text-red-600  py-20"> Map Section</h1>
       </section>
-      
     </div>
   );
 };

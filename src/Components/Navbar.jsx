@@ -9,12 +9,12 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div className="flex flex-col ">
-      <nav className="bg-[#3c8dbc] text-white h-auto px-3 ml-[102px]  flex justify-between">
+      <nav className="bg-[#3c8dbc] text-white h-auto px-3  flex justify-between">
         <Link to={"/"}>
           <img className="mt-5" src={nepalflag} alt="Logo" />
         </Link>
 
-        <div className="flex-1 flex justify-end tablet:px-20">
+        <div className="flex">
           <ul className="flex   ">
             <li className="flex flex-col gap-1 p-2 tablet:flex-row tablet:gap-10 tablet:p-5">
               <button className=" bg-red-500 flex relative  py-1  rounded  tablet:gap-3 tablet:px-2 tablet:py-3   tablet:font-bold  tablet:rounded-lg ">
@@ -30,7 +30,7 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
-      <Bar />
+      {/* <Bar /> */}
       {/* <div className="flex flex-col tablet:flex-row mt-2 gap-5">
         <button className="bg-[#f59d13cc] rounded flex gap-2 p-2">पूर्ण विवरण: <p className="rounded-2xl bg-[#274e23] px-2 py-1">1000</p></button>
         <button className="bg-[#f59d13cc] rounded p-2">पूर्ण विवरण</button>

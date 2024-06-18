@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 
-const family= () => {
+const Familydetail= () => {
   const [formData, setFormData] = useState({
     नाम: '',
     उमेर: '',
@@ -34,10 +35,10 @@ const family= () => {
       उमेर: '',
       लिङ्ग: '',
       नाता: '',
-      " नागरिकता नम्बर": '',
-    "  फोन नम्बर": '',
-   "   कृषि कार्यको क्षेत्र ": '',
-     " कृषि पेशामा संलग्न हुनु भएको कति वर्ष भयो": '',
+      "नागरिकता नम्बर": '',
+    "फोन नम्बर": '',
+   "कृषि कार्यको क्षेत्र": '',
+     "कृषि पेशामा संलग्न हुनु भएको कति वर्ष भयो": '',
     });
   };
 
@@ -105,8 +106,8 @@ const family= () => {
               className="border-[#D0D7E2] border-2 flex rounded-lg px-1 py-1 tablet:px-2 tablet:py-3"
               type="text"
               placeholder="नागरिकता  नम्बर"
-              name="नागरिकता_नम्बर"
-              value={formData['नागरिकता_नम्बर']}
+              name="नागरिकता नम्बर"
+              value={formData['नागरिकता नम्बर']}
               onChange={handleChange}
             />
           </div>
@@ -116,8 +117,8 @@ const family= () => {
               className="border-[#D0D7E2] border-2 flex rounded-lg px-1 py-1 tablet:px-2 tablet:py-3"
               type="text"
               placeholder="फोन नम्बर"
-              name="फोन_नम्बर"
-              value={formData['फोन_नम्बर']}
+              name="फोन नम्बर"
+              value={formData['फोन नम्बर']}
               onChange={handleChange}
             />
           </div>
@@ -127,8 +128,8 @@ const family= () => {
               className="border-[#D0D7E2] border-2 flex rounded-lg px-1 py-1 tablet:px-2 tablet:py-3"
               type="text"
               placeholder="  कृषि कार्यको क्षेत्र"
-              name="कृषि_कार्यको_क्षेत्र"
-              value={formData['कृषि_कार्यको_क्षेत्र']}
+              name="कृषि कार्यको क्षेत्र"
+              value={formData['कृषि कार्यको क्षेत्र']}
               onChange={handleChange}
             />
           </div>
@@ -139,17 +140,17 @@ const family= () => {
             className="border-[#D0D7E2] border-2 flex rounded"
             type="text"
             placeholder=""
-            name="कृषि_पेशामा_संलग्न_हुनु_भएको_कति_वर्ष_भयो"
-            value={formData['कृषि_पेशामा_संलग्न_हुनु_भएको_कति_वर्ष_भयो']}
+            name="कृषि पेशामा संलग्न हुनु भएको कति वर्ष भयो"
+            value={formData['कृषि पेशामा संलग्न हुनु भएको कति वर्ष भयो']}
             onChange={handleChange}
           />
         </div>
-        <button
-          className="mt-5 px-4 py-2 text-white bg-green-400"
+        <Link to={"/add/land-detail" }>   <button
+          className="px-2 py-1 text-white bg-green-400 rounded-lg my-2"
           type="submit"
         >
-          Submit
-        </button>
+         Next
+        </button></Link>
       </form>
 
       {/*  the table with form data */}
@@ -184,4 +185,4 @@ const family= () => {
   );
 };
 
-export default family;
+export default Familydetail;

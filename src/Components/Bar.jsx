@@ -81,7 +81,7 @@ const options = {
 
 export default function BarGraph() {
   return (
-    <div className="flex flex-col justify-center mt-20 items-center rounded-2xl border-red-500 border-2 ml-[104px]">
+    <div className="flex flex-col justify-center   items-center rounded-2xl border-red-500 border-2 w-[500px] h-[80px]">
       <Bar data={data} options={options} />
       <div className="flex flex-col tablet:flex-row mt-2 gap-5">
         <button className="bg-[#f59d13cc] rounded flex gap-2 p-2">

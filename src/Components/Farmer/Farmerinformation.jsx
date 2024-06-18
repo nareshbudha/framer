@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import jsPDF from "jspdf";
-import Calendars from "../Form/Calendars";
+import Calendars from "./Form/Calendars";
 import { Link } from "react-router-dom";
 import Papa from "papaparse"
-const Search = () => {
+const Farmerinfo = () => {
   const [formData, setFormData] = useState({
     "परिचय पत्र नं": "",
     "नागरिकता न": "",
@@ -107,7 +107,7 @@ const Search = () => {
         <p className="text-[#3C763D] font-bold rounded p-2 text-xl tablet:text-2xl tabletmd:text-3xl">
           किसान जानकारी
         </p>
-          <Link to={"/Personinfo" } className="py-2">
+          <Link to={"/add/personal-info"} className="py-2">
           <button className="p-3 mx-3 text-white rounded bg-[#3C763D]">Add Farmer</button>
         </Link>
       </div>
@@ -345,4 +345,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default Farmerinfo;

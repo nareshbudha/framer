@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import jsPDF from "jspdf";
 
-const FarmerAddress = () => {
+const Farmeraddress = () => {
   const [formData, setFormData] = useState({
     "स्थायी ठेगाना प्रदेश": "",
     "स्थायी ठेगाना जिल्ला": "",
@@ -67,6 +67,11 @@ const FarmerAddress = () => {
 
     setFormData((prevFormData) => ({
       ...prevFormData,
+      "स्थायी ठेगाना प्रदेश": "",
+      "स्थायी ठेगाना जिल्ला": "",
+      "स्थायी ठेगाना नगरपालिका": "",
+      "स्थायी ठेगाना वार्ड": "",
+      "स्थायी ठेगाना टोल": "",
       "अस्थायी ठेगाना प्रदेश": permanentState,
       "अस्थायी ठेगाना जिल्ला": permanentDistrict,
       "अस्थायी ठेगाना नगरपालिका": permanentMunicipality,
@@ -117,13 +122,15 @@ const FarmerAddress = () => {
     <div className="flex flex-col justify-between gap-5 px-5 laptop:px-0 my-10 mx-auto max-w-[1800px]">
       {/* किसानको ठेगाना */}
       <div className="flex flex-col gap-2">
-          <p className=" text-[#3C763D] bg-[#DFF0D8] font-bold rounded p-2 text-xl tablet:text-2xl tabletmd:text-3xl">
-            किसानको ठेगाना
-          </p>
-          <span className="text-[#000000] font-light mobile:text-base tablet:text-xl"></span>
-        </div>
-      <form className="grid-1  border-green-200 border-2 p-3 rounded-lg " onSubmit={handleSubmit}>
-        
+        <p className=" text-[#3C763D] bg-[#DFF0D8] font-bold rounded p-2 text-xl tablet:text-2xl tabletmd:text-3xl">
+          किसानको ठेगाना
+        </p>
+        <span className="text-[#000000] font-light mobile:text-base tablet:text-xl"></span>
+      </div>
+      <form
+        className="grid-1  border-green-200 border-2 p-3 rounded-lg "
+        onSubmit={handleSubmit}
+      >
         <section className="text-2xl font-medium">
           स्थायी ठेगाना
           <div className="text-[#000000] grid tablet:grid-cols-4  gap-4 mt-3 tabletmd:mt-5">
@@ -169,7 +176,7 @@ const FarmerAddress = () => {
                 className=" border-[#D0D7E2] border-2 flex rounded-lg px-1 py-1 tablet:px-2 tablet:py-3 text-sm tablet:text-base "
                 type="text"
                 placeholder="वार्ड न"
-                name="स्थायी ठेगानाना वार्ड"
+                name="स्थायी ठेगाना वार्ड"
                 value={formData["स्थायी ठेगाना वार्ड"]}
                 onChange={handleChange}
               />
@@ -188,8 +195,17 @@ const FarmerAddress = () => {
             </div>
           </div>
         </section>
-        <section className="text-2xl font-medium">
+        <section className="text-2xl font-medium py-5">
+        <div className="flex items-center gap-1 ">
+            Same as above
+            <input
+            className="mt-1"
+              type="checkbox"
+              onClick={handleCopyAddress}
+            />
+          </div>
           अस्थायी ठेगाना
+         
           <div className="text-[#000000] grid tablet:grid-cols-4  gap-4 mt-3 tabletmd:mt-5">
             <div className="relative gap-2 flex flex-col ">
               <p className=" font-bold"> प्रदेश: </p>
@@ -253,15 +269,7 @@ const FarmerAddress = () => {
           </div>
         </section>
         <div className="gap-2 flex ">
-          
-          <button 
-            className="mt-5 px-4 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded"
-            onClick={handleCopyAddress}
-          >
-            Same As Peramnet Address
-          </button>
-          <Link to={"/Family"} > 
-            
+          <Link to={"/add/family-detail"}>
             <button
               className="mt-5 px-4 py-2 text-white bg-green-400"
               type="submit"
@@ -323,4 +331,4 @@ const FarmerAddress = () => {
   );
 };
 
-export default FarmerAddress;
+export default Farmeraddress;

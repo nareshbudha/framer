@@ -39,10 +39,10 @@ const Navbar = () => {
             alt="Logo"
           /></div> */}
           <div className="text-white hidden tablet:flex space-x-4">
-            <Link to={"/dashboard"} className="text-base flex text-[#fff]">
-              गृह पृष्ठ{" "}
+            <Link to={"/"} className="text-base flex text-[#fff]">
+              गृह पृष्ठ
             </Link>
-            <Link to={"/"} className=" flex text-base gap-1 text-[#fff]">
+            <Link to={"/aboutus"} className=" flex text-base gap-1 text-[#fff]">
               हाम्रो बारेमा <IoIosArrowDown className="mt-1"/>
               
             </Link>
@@ -97,7 +97,7 @@ const Navbar = () => {
             गृह पृष्ठ
           </Link>
           <Link
-            to={"/"}
+            to={"/aboutus"}
             className="flex gap-1 text-white py-2 px-4 hover:bg-gray-700"
           >
             हाम्रो बारेमा <IoIosArrowDown className="mt-1"/>
