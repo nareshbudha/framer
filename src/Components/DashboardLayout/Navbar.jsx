@@ -1,15 +1,13 @@
 import React from "react";
 import { FaUserTie } from "react-icons/fa6";
 import { RiLogoutCircleRFill } from "react-icons/ri";
-import BarChart from "@canvasjs/charts";
-import Bar from "./Bar";
-import nepalflag from "../Components/assets/Image/flag.gif";
+import nepalflag from "../assets/Image/flag.gif";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div className="flex flex-col ">
-      <nav className="bg-[#3c8dbc] text-white h-auto px-3  flex justify-between">
+      <nav className="bg-[#3c8dbc] text-white h-[90px] px-3  flex justify-between">
         <Link to={"/"}>
           <img className="mt-5" src={nepalflag} alt="Logo" />
         </Link>
@@ -30,19 +28,7 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
-      {/* <Bar /> */}
-      {/* <div className="flex flex-col tablet:flex-row mt-2 gap-5">
-        <button className="bg-[#f59d13cc] rounded flex gap-2 p-2">पूर्ण विवरण: <p className="rounded-2xl bg-[#274e23] px-2 py-1">1000</p></button>
-        <button className="bg-[#f59d13cc] rounded p-2">पूर्ण विवरण</button>
-
-        <button className="bg-[#f59d13cc] rounded p-2">पूर्ण विवरण</button>
-
-        <button className="bg-green-500 rounded p-2">पूर्ण विवरण</button>
-
-        <button className="bg-green-500 rounded p-2">पूर्ण विवरण</button>
-
-
-      </div> */}
+ 
     </div>
   );
 };

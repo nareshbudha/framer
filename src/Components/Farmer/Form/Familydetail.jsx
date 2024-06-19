@@ -43,7 +43,7 @@ const Familydetail= () => {
   };
 
   return (
-    <div className='flex flex-col justify-between gap-5 px-5 laptop:px-0 my-10 mx-auto max-w-[1800px]'>
+    <div className='flex flex-col justify-between gap-5 px-5 laptop:px-0 m-10 max-w-[1800px]'>
       <div className="flex flex-col gap-2">
           <p className="text-[#3C763D] bg-[#DFF0D8] font-bold rounded p-2 text-xl tablet:text-2xl tabletmd:text-3xl">
             पारिवारिक विवरण
@@ -52,7 +52,7 @@ const Familydetail= () => {
         </div>
       <form className="grid-1 grid-1 border-green-200 border-2 p-3 rounded-lg " onSubmit={handleSubmit}>
         
-        <div className="text-[#000000] grid tablet:grid-cols-4 gap-4 mt-3 tabletmd:mt-5">
+        <div className="text-[#000000] grid tablet:grid-cols-4 gap-4 p-3">
           <div className="relative gap-2 flex flex-col">
             <p className="font-bold"> नाम:</p>
             <input
@@ -134,7 +134,7 @@ const Familydetail= () => {
             />
           </div>
         </div>
-        <div className="flex gap-2 mt-5 flex-col tablet:flex-row">
+        <div className="flex gap-2 p-3 flex-col tablet:flex-row">
           <p>कृषि पेशामा संलग्न हुनु भएको कति वर्ष भयो?</p>
           <input
             className="border-[#D0D7E2] border-2 flex rounded"
@@ -145,12 +145,16 @@ const Familydetail= () => {
             onChange={handleChange}
           />
         </div>
-        <Link to={"/add/land-detail" }>   <button
-          className="px-2 py-1 text-white bg-green-400 rounded-lg my-2"
-          type="submit"
-        >
-         Next
-        </button></Link>
+        <div className="flex p-3 ">
+          <Link to={"/admin/land-detail"}>
+            <button
+              className="px-4 py-2 text-white bg-green-400"
+              type="submit"
+            >
+              Next
+            </button>
+          </Link>
+        </div>
       </form>
 
       {/*  the table with form data */}

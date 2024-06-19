@@ -95,15 +95,15 @@ const Personalinfo = () => {
   //   };
 
   return (
-    <div className="flex flex-col justify-between gap-5 px-5 laptop:px-0 my-10 mx-auto max-w-[1800px]">
+    <div className="flex flex-col justify-between gap-5 px-5 laptop:px-0 m-10 max-w-[1800px]">
        <div className="flex flex-col gap-2">
-          <p className="text-[#3C763D] bg-[#DFF0D8] font-bold rounded p-2 text-xl tablet:text-2xl tabletmd:text-3xl">
+          <p className="text-[#3C763D] bg-[#DFF0D8] p-2 font-bold rounded text-xl tablet:text-2xl tabletmd:text-3xl">
             व्यक्तिगत विवरण
           </p>
         </div>
       <form className="grid-1 border-green-200 border-2 p-3 rounded-lg " onSubmit={handleSubmit}>
        
-        <div className="text-[#000000] grid tablet:grid-cols-4 gap-4 pt-10">
+        <div className="text-[#000000] grid tablet:grid-cols-4 gap-4 p-3">
           {/* Form fields */}
           <div className="relative gap-2 flex flex-col">
             <p className="font-semibold text-sm tablet:text-base tablet:font-bold">
@@ -232,12 +232,16 @@ const Personalinfo = () => {
             />
           </div>
         </div>
-        <Link to={"/add/farmer-address"}>   <button
-          className="px-2 py-1 text-white bg-green-400 rounded-lg my-2"
-          type="submit"
-        >
-         Next
-        </button></Link>
+        <div className="gap-2 flex ">
+        <Link to={"/admin/farmer-address"}>
+            <button
+              className="mt-5 px-4 py-2 text-white bg-green-400"
+              type="submit"
+            >
+              Next
+            </button>
+          </Link>
+        </div>
       
       </form>
 

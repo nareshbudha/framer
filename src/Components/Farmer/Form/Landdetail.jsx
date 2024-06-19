@@ -35,7 +35,7 @@ const Landdetail= () => {
   };
 
   return (
-    <div className='flex flex-col justify-between gap-5 px-5 laptop:px-0 my-10 mx-auto max-w-[1800px]'>
+    <div className='flex flex-col justify-between gap-5 px-5 laptop:px-0 m-10 max-w-[1800px]'>
       <div className="flex flex-col gap-2">
           <p className="text-[#3C763D] bg-[#DFF0D8] font-bold rounded p-2 text-xl tablet:text-2xl tabletmd:text-3xl">
           जग्गाको विवरण 
@@ -91,12 +91,16 @@ const Landdetail= () => {
             />
           </div>
         </div>
-        <Link to={"/add/irrigation-detail"  }>   <button
-          className="px-2 py-1 text-white bg-green-400 rounded-lg my-2"
-          type="submit"
-        >
-         Next
-        </button></Link>
+        <div className="gap-2 flex p-3">
+          <Link to={"/admin/irrigation-detail"}>
+            <button
+              className="px-4 py-2 text-white bg-green-400"
+              type="submit"
+            >
+              Next
+            </button>
+          </Link>
+        </div>
       </form>
 
       {/*  the table with form data */}

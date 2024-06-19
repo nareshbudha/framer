@@ -119,23 +119,26 @@ const Farmeraddress = () => {
   //   };
 
   return (
-    <div className="flex flex-col justify-between gap-5 px-5 laptop:px-0 my-10 mx-auto max-w-[1800px]">
+    <div className="flex flex-col justify-between gap-5 px-5 laptop:px-0 m-10 max-w-[1800px]">
       {/* किसानको ठेगाना */}
       <div className="flex flex-col gap-2">
-        <p className=" text-[#3C763D] bg-[#DFF0D8] font-bold rounded p-2 text-xl tablet:text-2xl tabletmd:text-3xl">
+        <p className=" text-[#3C763D] bg-[#DFF0D8] font-semibold text-sm tablet:text-base tablet:font-bold rounded p-2 tabletmd:text-3xl">
           किसानको ठेगाना
         </p>
-        <span className="text-[#000000] font-light mobile:text-base tablet:text-xl"></span>
       </div>
+
       <form
-        className="grid-1  border-green-200 border-2 p-3 rounded-lg "
+        className="grid-1 border-green-200 border-2 p-3 rounded-lg "
         onSubmit={handleSubmit}
       >
-        <section className="text-2xl font-medium">
-          स्थायी ठेगाना
+        <section className="p-3">
+          <p className="text-2xl font-bold"> स्थायी ठेगाना</p>
           <div className="text-[#000000] grid tablet:grid-cols-4  gap-4 mt-3 tabletmd:mt-5">
             <div className="relative gap-2 flex flex-col ">
-              <p className=" font-bold"> प्रदेश: </p>
+              <p className=" font-semibold text-sm tablet:text-base tablet:font-bold">
+                {" "}
+                प्रदेश:{" "}
+              </p>
               <input
                 className=" border-[#D0D7E2]  border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3  "
                 type="text"
@@ -146,7 +149,9 @@ const Farmeraddress = () => {
               />
             </div>
             <div className="relative gap-2 flex flex-col ">
-              <p className=" font-bold">जिल्ला:</p>
+              <p className=" font-semibold text-sm tablet:text-base tablet:font-bold">
+                जिल्ला:
+              </p>
               <input
                 className=" border-[#D0D7E2]  border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3  "
                 type="text"
@@ -158,7 +163,9 @@ const Farmeraddress = () => {
             </div>
 
             <div className="relative gap-2 flex flex-col">
-              <p className="  font-bold">नगरपालिका:</p>
+              <p className="  font-semibold text-sm tablet:text-base tablet:font-bold">
+                नगरपालिका:
+              </p>
               <input
                 className=" border-[#D0D7E2] border-2 flex rounded-lg px-1 py-1 tablet:px-2 tablet:py-3 text-sm tablet:text-base "
                 type="text"
@@ -170,7 +177,9 @@ const Farmeraddress = () => {
             </div>
 
             <div className="relative gap-2 flex flex-col">
-              <p className=" font-bold ">वार्ड:</p>
+              <p className=" font-semibold text-sm tablet:text-base tablet:font-bold ">
+                वार्ड:
+              </p>
 
               <input
                 className=" border-[#D0D7E2] border-2 flex rounded-lg px-1 py-1 tablet:px-2 tablet:py-3 text-sm tablet:text-base "
@@ -183,7 +192,9 @@ const Farmeraddress = () => {
             </div>
 
             <div className="relative gap-2 flex flex-col">
-              <p className=" font-bold ">टोल:</p>
+              <p className=" font-semibold text-sm tablet:text-base tablet:font-bold ">
+                टोल:
+              </p>
               <input
                 className=" border-[#D0D7E2] border-2 flex rounded-lg px-1 py-1 tablet:px-2 tablet:py-3 text-sm tablet:text-base "
                 type="text"
@@ -195,20 +206,23 @@ const Farmeraddress = () => {
             </div>
           </div>
         </section>
-        <section className="text-2xl font-medium py-5">
-        <div className="flex items-center gap-1 ">
+        <section className="flex flex-col gap-5 p-3">
+          <div className="flex items-text-xl font-normal text-red-400 mt-3 gap-1">
             Same as above
             <input
-            className="mt-1"
+              className="mt-1"
               type="checkbox"
               onClick={handleCopyAddress}
             />
           </div>
-          अस्थायी ठेगाना
-         
-          <div className="text-[#000000] grid tablet:grid-cols-4  gap-4 mt-3 tabletmd:mt-5">
+          <p className="text-2xl font-bold">अस्थायी ठेगाना</p>
+
+          <div className="text-[#000000] grid tablet:grid-cols-4  gap-4">
             <div className="relative gap-2 flex flex-col ">
-              <p className=" font-bold"> प्रदेश: </p>
+              <p className=" font-semibold text-sm tablet:text-base tablet:font-bold">
+                {" "}
+                प्रदेश:{" "}
+              </p>
               <input
                 className=" border-[#D0D7E2]  border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3  "
                 type="text"
@@ -219,7 +233,9 @@ const Farmeraddress = () => {
               />
             </div>
             <div className="relative gap-2 flex flex-col ">
-              <p className=" font-bold">जिल्ला:</p>
+              <p className=" font-semibold text-sm tablet:text-base tablet:font-bold">
+                जिल्ला:
+              </p>
               <input
                 className=" border-[#D0D7E2]  border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3  "
                 type="text"
@@ -231,7 +247,9 @@ const Farmeraddress = () => {
             </div>
 
             <div className="relative gap-2 flex flex-col">
-              <p className="  font-bold">नगरपालिका:</p>
+              <p className="  font-semibold text-sm tablet:text-base tablet:font-bold">
+                नगरपालिका:
+              </p>
               <input
                 className=" border-[#D0D7E2] border-2 flex rounded-lg px-1 py-1 tablet:px-2 tablet:py-3 text-sm tablet:text-base "
                 type="text"
@@ -243,7 +261,9 @@ const Farmeraddress = () => {
             </div>
 
             <div className="relative gap-2 flex flex-col">
-              <p className=" font-bold ">वार्ड:</p>
+              <p className=" font-semibold text-sm tablet:text-base tablet:font-bold ">
+                वार्ड:
+              </p>
 
               <input
                 className=" border-[#D0D7E2] border-2 flex rounded-lg px-1 py-1 tablet:px-2 tablet:py-3 text-sm tablet:text-base "
@@ -256,7 +276,9 @@ const Farmeraddress = () => {
             </div>
 
             <div className="relative gap-2 flex flex-col">
-              <p className=" font-bold ">टोल:</p>
+              <p className=" font-semibold text-sm tablet:text-base tablet:font-bold ">
+                टोल:
+              </p>
               <input
                 className=" border-[#D0D7E2] border-2 flex rounded-lg px-1 py-1 tablet:px-2 tablet:py-3 text-sm tablet:text-base "
                 type="text"
@@ -269,7 +291,7 @@ const Farmeraddress = () => {
           </div>
         </section>
         <div className="gap-2 flex ">
-          <Link to={"/add/family-detail"}>
+          <Link to={"/admin/family-detail"}>
             <button
               className="mt-5 px-4 py-2 text-white bg-green-400"
               type="submit"

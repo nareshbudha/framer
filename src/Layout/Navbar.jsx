@@ -42,7 +42,7 @@ const Navbar = () => {
             <Link to={"/"} className="text-base flex text-[#fff]">
               गृह पृष्ठ
             </Link>
-            <Link to={"/aboutus"} className=" flex text-base gap-1 text-[#fff]">
+            <Link to={"/about-us"} className=" flex text-base gap-1 text-[#fff]">
               हाम्रो बारेमा <IoIosArrowDown className="mt-1"/>
               
             </Link>
@@ -53,7 +53,7 @@ const Navbar = () => {
           <div className="hidden tablet:flex space-x-4 ">
           <button className="">
             <Link
-              to={"/Personalinfo"}
+              to={"/"}
               className="block text-white bg-[#FF0000] rounded  py-1 px-4 hover:bg-gray-700"
             >
               दर्ता गर्नुहोस्
@@ -91,13 +91,13 @@ const Navbar = () => {
         </div>
         <div className={`tablet:hidden ${isOpen ? "block" : "hidden"}`}>
           <Link
-            to={"/dashboard"}
+            to={"/"}
             className="block text-white py-2 px-4 hover:bg-gray-700"
           >
             गृह पृष्ठ
           </Link>
           <Link
-            to={"/aboutus"}
+            to={"/about-us"}
             className="flex gap-1 text-white py-2 px-4 hover:bg-gray-700"
           >
             हाम्रो बारेमा <IoIosArrowDown className="mt-1"/>
@@ -109,7 +109,7 @@ const Navbar = () => {
             सूचना तथा समाचार <IoIosArrowDown className="mt-1"/>
           </Link>
           <Link
-            to={"/Personalinfo"}
+            to={"/news"}
             className="block text-white py-2 px-4 hover:bg-gray-700"
           >
             दर्ता गर्नुहोस्

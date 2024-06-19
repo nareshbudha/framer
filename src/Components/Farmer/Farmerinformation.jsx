@@ -101,21 +101,20 @@ const Farmerinfo = () => {
   };
 
   return (
-    <div className="flex flex-col justify-between gap-5 px-5 laptop:px-0 my-10 mx-auto max-w-[1800px]">
-       <div className="flex justify-between  gap-2">
-        
-        <p className="text-[#3C763D] font-bold rounded p-2 text-xl tablet:text-2xl tabletmd:text-3xl">
+    <div className="flex flex-col justify-between gap-5  laptop:px-0  m-10 max-w-[1800px]">
+       <div className="flex justify-between">
+        <p className="text-[#3C763D] font-bold rounded  text-xl tablet:text-2xl tabletmd:text-3xl">
           किसान जानकारी
         </p>
-          <Link to={"/add/personal-info"} className="py-2">
+          <Link to={"/admin/personal-info"} className="py-2">
           <button className="p-3 mx-3 text-white rounded bg-[#3C763D]">Add Farmer</button>
         </Link>
       </div>
       <form className="grid-1 border-green-200 border-2 p-3 rounded-lg" onSubmit={handleSubmit}>
        
-        <div className="text-[#000000] grid tablet:grid-cols-4 gap-4 pt-10">
+        <div className="text-[#000000] grid tablet:grid-cols-4 gap-4">
           {/* Form fields */}
-          <div className="relative gap-2 flex flex-col">
+          <div className="relative gap-2 flex flex-col p-2">
             <p className="font-semibold text-sm tablet:text-base tablet:font-bold">
               परिचय पत्र नं:
             </p>
@@ -279,8 +278,8 @@ const Farmerinfo = () => {
       </form>
 
       {/* Table to display form data */}
-      <div className="mt-10 ">
-        <div className="flex justify-end items-center my-1">
+      <div className=" ">
+        <div className="flex justify-end items-center">
           {/* Button to generate PDF */}
           <button
             className="mt-5 px-4 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded flex justify-end"
@@ -293,7 +292,7 @@ const Farmerinfo = () => {
           <p>कार्यालय :- स्थानिय तह बीरेन्द्रनगर नगरपालिका वार्ड :- ४</p>
         </div>
 
-        <table className="border w-full p-10 border-gray-500">
+        <table className="border w-full  border-gray-500">
           <thead>
             <tr className="divide-x divide-black">
               <th className="text-sm">क्र.सं</th>

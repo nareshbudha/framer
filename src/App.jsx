@@ -1,11 +1,9 @@
- import { useState, react } from "react"; import "./App.css";
- import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-
-
- import Layout from "./Layout/Layout";
-import Dashboard from "./Components/Dashboard";
-import Bar from '../src/Components/Bar'
+import { useState, react } from "react";
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./Layout/Layout";
+import Dashboard from "./Components/DashboardLayout/Dashboard";
+import Bar from "./Components/common/Bar";
 import Landdetail from "./Components/Farmer/Form/Landdetail";
 import Irrigationdetail from "./Components/Farmer/Form/Irrigationdetail";
 import Homepage from "./Components/Pages/Homepage";
@@ -18,8 +16,9 @@ import Farmeraddress from "./Components/Farmer/Form/Farmeraddress";
 import Agriculturefarmregistertion from "./Components/Farmer/Form/Agriculturefarmregi";
 import Documentsection from "./Components/Farmer/Form/Documentsection";
 import Aboutus from "./Components/Pages/Aboutus";
-
-
+import Test from "./Components/Farmer/Form/Test";
+import News from "./Components/Pages/News";
+import Dashboardlayout from "./Components/DashboardLayout/Dashboardlayout";
 
 function App() {
   return (
@@ -30,30 +29,110 @@ function App() {
             path="/"
             element={
               <Layout>
-                <Homepage/>
+                <Homepage />
               </Layout>
             }
-           />
-           <Route
+          />
+          <Route
             path="/about-us"
             element={
               <Layout>
-                <Aboutus/>
+                <Aboutus />
               </Layout>
             }
-           />
-          <Route path="/login" element={<Login/>} />
-          <Route path="/add/personal-info" element={<Personalinfo/>} />
-           <Route path="/add/family-detail" element={<Familydetail />} />
-          <Route path="/add/farmer-address" element={<Farmeraddress/>} />
-          <Route path="/admin/dashboard" element={<Dashboard/>} />
-           <Route path="/farmer-informtion" element={<Farmerinfo/>} />
-          <Route path="/add/land-detail" element={<Landdetail/>}/>
-          <Route path="/add/irrigation-detail"  element={<Irrigationdetail/>}/>
-          <Route path="/farmer/register" element={<Agriculturefarmregistertion/>}/>
-          <Route path="/crop/production/and/market-management" element={<Cropproduction/>}/> 
-          <Route path="/document/upload-section" element ={<Documentsection/>}/>
-         
+          />
+          <Route
+            path="/news"
+            element={
+              <Layout>
+                <News />
+              </Layout>
+            }
+          />
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/admin/dashboard"
+            element={
+              <Dashboardlayout>
+                <Dashboard />
+              </Dashboardlayout>
+            }
+          />
+          <Route
+            path="/admin/farmer-information"
+            element={
+              <Dashboardlayout>
+                <Farmerinfo />
+              </Dashboardlayout>
+            }
+          />
+          <Route
+            path="/admin/personal-info"
+            element={
+              <Dashboardlayout>
+                <Personalinfo />
+              </Dashboardlayout>
+            }
+          />
+          <Route
+            path="/admin/farmer-address"
+            element={
+              <Dashboardlayout>
+                <Farmeraddress />
+              </Dashboardlayout>
+            }
+          />
+          <Route
+            path="/admin/family-detail"
+            element={
+              <Dashboardlayout>
+                <Familydetail />
+              </Dashboardlayout>
+            }
+          />
+          <Route
+            path="/admin/land-detail"
+            element={
+              <Dashboardlayout>
+                <Landdetail />
+              </Dashboardlayout>
+            }
+          />
+          <Route
+            path="/admin/irrigation-detail"
+            element={
+              <Dashboardlayout>
+                <Irrigationdetail />
+              </Dashboardlayout>
+            }
+          />
+          <Route
+            path="/admin/farmer/register"
+            element={
+              <Dashboardlayout>
+                <Agriculturefarmregistertion />
+              </Dashboardlayout>
+            }
+          />
+          <Route
+            path="/admin/crop/production/and/market-management"
+            element={
+              <Dashboardlayout>
+                <Cropproduction />
+              </Dashboardlayout>
+            }
+          />
+          <Route
+            path="/admin/document/upload-section"
+            element={
+              <Dashboardlayout>
+                <Documentsection />
+              </Dashboardlayout>
+            }
+          />
+
+          <Route path="/test" element={<Test />} />
+          <Route path="/news" element={<News />} />
         </Routes>
       </BrowserRouter>
     </>
