@@ -428,7 +428,7 @@ const info = () => {
       {/* कृषि व्यवसाय/फर्म/उद्यम दर्ता */}
       <form className="grid-1  ">
         <div className="flex flex-col gap-2">
-          <p className="text-[#3C763D] bg-[#DFF0D8] font-bold text-xl tablet:text-2xl tabletmd:text-3xl">
+        <p className="text-[#3C763D] bg-[#DFF0D8] p-3 font-bold rounded text-xl tablet:text-2xl">
             कृषि व्यवसाय/फर्म/उद्यम दर्ता
           </p>
           <span className="text-[#000000] font-light mobile:text-base tablet:text-xl"></span>

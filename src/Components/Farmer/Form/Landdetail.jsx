@@ -45,7 +45,8 @@ const Landdetail= () => {
       <form className="grid-1 grid-1 border-green-200 border-2 p-3 rounded-lg " onSubmit={handleSubmit}>
         <div className="text-[#000000] grid tablet:grid-cols-4 gap-4 mt-3 tabletmd:mt-5">
         <div className="relative gap-2 flex flex-col ">
-            <p className="font-bold">जग्गाको किसिम:</p>
+        <p className="text-[#3C763D] bg-[#DFF0D8] p-3 font-bold rounded text-xl tablet:text-2xl">
+            जग्गाको किसिम:</p>
             <select
               className="border-[#D0D7E2] border-2 flex rounded-lg px-1 py-1 tablet:px-2 tablet:py-3"
               name="जग्गाको किसिम"
@@ -101,6 +102,7 @@ const Landdetail= () => {
             </button>
           </Link>
         </div>
+        
       </form>
 
       {/*  the table with form data */}

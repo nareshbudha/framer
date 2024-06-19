@@ -103,7 +103,7 @@ const Farmerinfo = () => {
   return (
     <div className="flex flex-col justify-between gap-5  laptop:px-0  m-10 max-w-[1800px]">
        <div className="flex justify-between">
-        <p className="text-[#3C763D] font-bold rounded  text-xl tablet:text-2xl tabletmd:text-3xl">
+       <p className="text-[#3C763D] bg-[#DFF0D8] p-3 font-bold rounded text-xl tablet:text-2xl">
           किसान जानकारी
         </p>
           <Link to={"/admin/personal-info"} className="py-2">

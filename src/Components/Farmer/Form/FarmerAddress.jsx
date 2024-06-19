@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import jsPDF from "jspdf";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 const Farmeraddress = () => {
   const [formData, setFormData] = useState({
@@ -122,7 +123,7 @@ const Farmeraddress = () => {
     <div className="flex flex-col justify-between gap-5 px-5 laptop:px-0 m-10 max-w-[1800px]">
       {/* किसानको ठेगाना */}
       <div className="flex flex-col gap-2">
-        <p className=" text-[#3C763D] bg-[#DFF0D8] font-semibold text-sm tablet:text-base tablet:font-bold rounded p-2 tabletmd:text-3xl">
+      <p className="text-[#3C763D] bg-[#DFF0D8] p-3 font-bold rounded text-xl tablet:text-2xl">
           किसानको ठेगाना
         </p>
       </div>
@@ -290,13 +291,24 @@ const Farmeraddress = () => {
             </div>
           </div>
         </section>
-        <div className="gap-2 flex ">
-          <Link to={"/admin/family-detail"}>
+      
+        <div className="gap-2 flex">
+          <Link to={"/admin/farmer-information"}>
             <button
-              className="mt-5 px-4 py-2 text-white bg-green-400"
+              className="  flex gap-2 items-center px-4 py-2 text-white bg-red-500"
               type="submit"
             >
-              Next
+              <FaArrowLeft className="" />
+              व्यक्तिगत विवरण
+            </button>
+          </Link>
+          <Link to={"/admin/family-detail"}>
+            <button
+              className="  flex gap-2 items-center px-4 py-2 text-white bg-[#3C763D]"
+              type="submit"
+            >
+              पारिवारिक विवरण
+              <FaArrowRight className="" />
             </button>
           </Link>
         </div>

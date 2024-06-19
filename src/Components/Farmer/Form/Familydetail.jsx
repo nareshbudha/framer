@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 const Familydetail= () => {
   const [formData, setFormData] = useState({
@@ -145,13 +146,22 @@ const Familydetail= () => {
             onChange={handleChange}
           />
         </div>
-        <div className="flex p-3 ">
+        <div className="gap-2 flex">
+        <Link to={"/admin/farmer-address"} >
+            <button
+              className="  flex gap-2 items-center px-4 py-2 text-white bg-red-500"
+            >
+              <FaArrowLeft className="" />
+              किसानको ठेगाना
+            </button>
+          </Link>
           <Link to={"/admin/land-detail"}>
             <button
-              className="px-4 py-2 text-white bg-green-400"
+              className="  flex gap-2 items-center px-4 py-2 text-white bg-[#3C763D]"
               type="submit"
             >
-              Next
+            जग्गाको विवरण
+              <FaArrowRight className="" />
             </button>
           </Link>
         </div>

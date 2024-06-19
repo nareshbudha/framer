@@ -84,7 +84,7 @@ const Agriculturefarmregistertion = () => {
   return (
     <div className="flex flex-col justify-between gap-5 px-5 laptop:px-0 m-10 max-w-[1800px]">
       <div className="flex flex-col gap-2">
-        <p className="text-[#3C763D] bg-[#DFF0D8] font-bold rounded p-2 text-xl tablet:text-2xl tabletmd:text-3xl">
+      <p className="text-[#3C763D] bg-[#DFF0D8] p-3 font-bold rounded text-xl tablet:text-2xl">
           कृषि व्यवसाय/फर्म/उद्यम दर्ता
         </p>
       </div>

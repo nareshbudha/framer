@@ -3,6 +3,8 @@ import jsPDF from "jspdf";
 import Calendars from "../Form/Calendars";
 import { Link } from "react-router-dom";
 import FarmerAddress from "./Farmeraddress";
+import { GiArrowhead } from "react-icons/gi";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 ("");
 
 const Personalinfo = () => {
@@ -96,13 +98,15 @@ const Personalinfo = () => {
 
   return (
     <div className="flex flex-col justify-between gap-5 px-5 laptop:px-0 m-10 max-w-[1800px]">
-       <div className="flex flex-col gap-2">
-          <p className="text-[#3C763D] bg-[#DFF0D8] p-2 font-bold rounded text-xl tablet:text-2xl tabletmd:text-3xl">
-            व्यक्तिगत विवरण
-          </p>
-        </div>
-      <form className="grid-1 border-green-200 border-2 p-3 rounded-lg " onSubmit={handleSubmit}>
-       
+      <div className="flex flex-col gap-2">
+        <p className="text-[#3C763D] bg-[#DFF0D8] p-3 font-bold rounded text-xl tablet:text-2xl">
+          व्यक्तिगत विवरण
+        </p>
+      </div>
+      <form
+        className="grid-1 border-green-200 border-2 p-3 rounded-lg "
+        onSubmit={handleSubmit}
+      >
         <div className="text-[#000000] grid tablet:grid-cols-4 gap-4 p-3">
           {/* Form fields */}
           <div className="relative gap-2 flex flex-col">
@@ -232,20 +236,27 @@ const Personalinfo = () => {
             />
           </div>
         </div>
-        <div className="gap-2 flex ">
-        <Link to={"/admin/farmer-address"}>
+        <div className="gap-2 flex">
+          <Link to={"/admin/farmer-information"}>
             <button
-              className="mt-5 px-4 py-2 text-white bg-green-400"
+              className="  flex gap-2 items-center px-4 py-2 text-white bg-red-500"
+            >
+              <FaArrowLeft className="" />
+              किसान जानकारी
+            </button>
+          </Link>
+          <Link to={"/admin/farmer-address"} className="flex ">
+            <button
+              className="  flex gap-2 items-center px-4 py-2 text-white bg-[#3C763D]"
               type="submit"
             >
-              Next
+              किसानको ठेगाना
+              <FaArrowRight className="" />
             </button>
           </Link>
         </div>
-      
       </form>
 
-    
       {/* Table to display form data */}
       {/* <div className="mt-10">
         <div className="flex justify-center items-center my-3">
