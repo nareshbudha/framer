@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 const Landdetail= () => {
   const [formData, setFormData] = useState({
@@ -7,6 +8,7 @@ const Landdetail= () => {
     स्वामित्व: '',
     "जमिनको किसिम": '',
     क्षेत्रफल: '',
+    "लाल पुर्जाको फोटो":'',
   });
 //   const toNepaliNumerals = (number) => {
 //     const nepaliNumerals = ["०", "१", "२", "३", "४", "५", "६", "७", "८", "९"];
@@ -31,6 +33,7 @@ const Landdetail= () => {
         स्वामित्व:'',
         "जमिनको किसिम":'',
         क्षेत्रफल:'',
+        "लाल पुर्जाको फोटो":'',
     });
   };
 
@@ -45,7 +48,7 @@ const Landdetail= () => {
       <form className="grid-1 grid-1 border-green-200 border-2 p-3 rounded-lg " onSubmit={handleSubmit}>
         <div className="text-[#000000] grid tablet:grid-cols-4 gap-4 mt-3 tabletmd:mt-5">
         <div className="relative gap-2 flex flex-col ">
-        <p className="text-[#3C763D] bg-[#DFF0D8] p-3 font-bold rounded text-xl tablet:text-2xl">
+        <p className="font-bold">स्वामित्व ( जग्गा धनी )
             जग्गाको किसिम:</p>
             <select
               className="border-[#D0D7E2] border-2 flex rounded-lg px-1 py-1 tablet:px-2 tablet:py-3"
@@ -55,7 +58,7 @@ const Landdetail= () => {
             >
               <option value="">एउटा छनौट गर्नुहोस्</option>
               <option value="आफ्नो">आफ्नो</option>
-              <option value="आफ्नो">आफ्नो</option>
+              <option value=" अरुको"> अरुको</option>
             </select>
           </div>
           <div className="relative gap-2 flex flex-col">
@@ -91,14 +94,33 @@ const Landdetail= () => {
               onChange={handleChange}
             />
           </div>
+          <div className="relative gap-2 flex flex-col">
+            <p className="font-bold">लाल पुर्जाको फोटो:</p>
+            <input
+              className="border-[#D0D7E2] border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3"
+              type="file"
+              name="लाल पुर्जाको फोटो"
+              onChange={handleChange}
+            />
+           
+          </div>
         </div>
         <div className="gap-2 flex p-3">
+        <Link to={"/admin/family-detail"} >
+            <button
+              className="  flex gap-2 items-center px-4 py-2 text-white bg-red-500"
+            >
+              <FaArrowLeft className="" />
+              पारिवारिक विवरण
+            </button>
+          </Link>
           <Link to={"/admin/irrigation-detail"}>
             <button
-              className="px-4 py-2 text-white bg-green-400"
+              className="  flex gap-2 items-center px-4 py-2 text-white bg-[#3C763D]"
               type="submit"
             >
-              Next
+         सिँचाइ विवरण
+              <FaArrowRight className="" />
             </button>
           </Link>
         </div>

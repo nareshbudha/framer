@@ -53,7 +53,7 @@ const Navbar = () => {
           <div className="hidden tablet:flex space-x-4 ">
           <button className="">
             <Link
-              to={"/"}
+              to={"/admin/farmer-information"}
               className="block text-white bg-[#FF0000] rounded  py-1 px-4 hover:bg-gray-700"
             >
               दर्ता गर्नुहोस्

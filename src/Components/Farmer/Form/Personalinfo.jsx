@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import jsPDF from "jspdf";
 import Calendars from "../Form/Calendars";
 import { Link } from "react-router-dom";
-import FarmerAddress from "./Farmeraddress";
-import { GiArrowhead } from "react-icons/gi";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 ("");
 
@@ -19,11 +17,10 @@ const Personalinfo = () => {
     "नागरिकता जारी जिल्ला": "",
     "कृषि कार्यको क्षेत्र": "",
     "तपाईं वार्षिक औसत कति महिना कृषि कार्यमा संलग्न हुनुहुन्छ?": "",
+    "पासपोर्ट साइजको फोटो": "",
+    "नागरीकताको फोटो":"",
   });
-  const toNepaliNumerals = (number) => {
-    const nepaliNumerals = ["०", "१", "२", "३", "४", "५", "६", "७", "८", "९"];
-    return number.toString().replace(/\d/g, (d) => nepaliNumerals[d]);
-  };
+
 
   const [tableData, setTableData] = useState([]);
 
@@ -56,6 +53,8 @@ const Personalinfo = () => {
       "नागरिकता जारी जिल्ला": "",
       "कृषि कार्यको क्षेत्र": "",
       "तपाईं वार्षिक औसत कति महिना कृषि कार्यमा संलग्न हुनुहुन्छ?": "",
+      "पासपोर्ट साइजको फोटो": "",
+      "नागरीकताको फोटो":"",
     });
   };
 
@@ -234,6 +233,26 @@ const Personalinfo = () => {
               }
               onChange={handleChange}
             />
+          </div>
+          <div className="relative gap-2 flex flex-col">
+            <p className="font-bold">पासपोर्ट साइजको फोटो:</p>
+            <input
+              className="border-[#D0D7E2] border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3"
+              type="file"
+              name="पासपोर्ट साइजको फोटो"
+              onChange={handleChange}
+            />
+           
+          </div>
+          <div className="relative gap-2 flex flex-col">
+            <p className="font-bold">नागरीकताको फोटो:</p>
+            <input
+              className="border-[#D0D7E2] border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3"
+              type="file"
+              name="नागरीकताको फोटो"
+              onChange={handleChange}
+            />
+         
           </div>
         </div>
         <div className="gap-2 flex">

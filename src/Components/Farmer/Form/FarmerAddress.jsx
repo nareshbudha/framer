@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import jsPDF from "jspdf";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
-const Farmeraddress = () => {
+const FarmerAddress = () => {
   const [formData, setFormData] = useState({
     "स्थायी ठेगाना प्रदेश": "",
     "स्थायी ठेगाना जिल्ला": "",
@@ -365,4 +365,4 @@ const Farmeraddress = () => {
   );
 };
 
-export default Farmeraddress;
+export default FarmerAddress;

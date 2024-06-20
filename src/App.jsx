@@ -19,6 +19,7 @@ import Aboutus from "./Components/Pages/Aboutus";
 import Test from "./Components/Farmer/Form/Test";
 import News from "./Components/Pages/News";
 import Dashboardlayout from "./Components/DashboardLayout/Dashboardlayout";
+import Wardone from "./Components/DashboardLayout/Wardwisedata/Wardone";
 
 function App() {
   return (
@@ -130,7 +131,15 @@ function App() {
               </Dashboardlayout>
             }
           />
-
+          <Route
+            path="/one"
+            element={
+              <Dashboardlayout>
+                <Wardone/>
+              </Dashboardlayout>
+            }
+          />
+          
           <Route path="/test" element={<Test />} />
           <Route path="/news" element={<News />} />
         </Routes>

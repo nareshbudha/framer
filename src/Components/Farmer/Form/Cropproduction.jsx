@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 const Cropproduction = () => {
   const [formData, setFormData] = useState({
-   "बाली/उत्पादनको नाम" : "",
+    "बाली/उत्पादनको नाम": "",
     परिमाण: "",
     "प्रति एकाई दर": "",
     "बजारीकरणको तरिका": "",
@@ -37,7 +38,7 @@ const Cropproduction = () => {
   return (
     <div className="flex flex-col justify-between gap-5 px-5 laptop:px-0 m-10 max-w-[1800px]">
       <div className="flex flex-col gap-2">
-      <p className="text-[#3C763D] bg-[#DFF0D8] p-3 font-bold rounded text-xl tablet:text-2xl">
+        <p className="text-[#3C763D] bg-[#DFF0D8] p-3 font-bold rounded text-xl tablet:text-2xl">
           बाली उत्पादन/बजारीकरण विवरण
         </p>
       </div>
@@ -84,7 +85,7 @@ const Cropproduction = () => {
             <input
               className="border-[#D0D7E2] border-2 flex rounded-lg px-1 py-1 tablet:px-2 tablet:py-3"
               type="text"
-                placeholder="व्यापारी घरमै आएर"
+              placeholder="व्यापारी घरमै आएर"
               name="बजारीकरणको तरिका"
               value={formData["बजारीकरणको तरिका"]}
               onChange={handleChange}
@@ -92,20 +93,28 @@ const Cropproduction = () => {
           </div>
         </div>
         <div className="gap-2 flex p-3">
+          <Link to={"/admin/farmer/register"}>
+            <button className="  flex gap-2 items-center px-4 py-2 text-white bg-red-500">
+              <FaArrowLeft className="" />
+              कृषि व्यवसाय/फर्म/उद्यम दर्ता
+
+
+            </button>
+          </Link>
           <Link to={"/admin/document/upload-section"}>
             <button
-              className="px-4 py-2 text-white bg-green-400"
+              className="  flex gap-2 items-center px-4 py-2 text-white bg-[#3C763D]"
               type="submit"
             >
-              Next
+              कागजात अपलोड
+              <FaArrowRight className="" />
             </button>
           </Link>
         </div>
-       
       </form>
 
       {/*  the table with form data */}
-       {/* <div className="mt-10">
+      {/* <div className="mt-10">
         <table className="border-collapse border border-gray-500">
           <thead>
             <tr>

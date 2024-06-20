@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Calendars from "./Calendars";
 import { Link } from "react-router-dom";
-import FarmerAddress from "./Farmeraddress";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+
 
 const Agriculturefarmregistertion = () => {
   const [formData, setFormData] = useState({
@@ -195,13 +196,21 @@ const Agriculturefarmregistertion = () => {
             />
           </div>
         </div>
-        <div className="gap-2 flex p-3">
+      
+        <div className="gap-2 flex">
+          <Link to={"/admin/irrigation-detail"}>
+            <button className="  flex gap-2 items-center px-4 py-2 text-white bg-red-500">
+              <FaArrowLeft className="" />
+              सिँचाइ विवरण
+            </button>
+          </Link>
           <Link to={"/admin/crop/production/and/market-management"}>
             <button
-              className="px-4 py-2 text-white bg-green-400"
+              className="  flex gap-2 items-center px-4 py-2 text-white bg-[#3C763D]"
               type="submit"
             >
-              Next
+              बाली उत्पादन/बजारीकरण विवरण
+              <FaArrowRight className="" />
             </button>
           </Link>
         </div>
