@@ -1,0 +1,128 @@
+import React, { useState } from 'react';
+import { Link } from "react-router-dom";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+
+const AddLandDetail= () => {
+  const [formData, setFormData] = useState({
+    "जग्गाको किसिम":'',
+    स्वामित्व: '',
+    "जमिनको किसिम": '',
+    क्षेत्रफल: '',
+    "लाल पुर्जाको फोटो":'',
+  });
+  const [tableData, setTableData] = useState([]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setTableData([...tableData, formData]);
+    setFormData({
+        "जग्गाको किसिम":'',
+        स्वामित्व:'',
+        "जमिनको किसिम":'',
+        क्षेत्रफल:'',
+        "लाल पुर्जाको फोटो":'',
+    });
+  };
+
+  return (
+    <div className='flex flex-col justify-between gap-5 px-5 laptop:px-0 m-10 max-w-[1800px]'>
+      <div className="flex flex-col gap-2">
+          <p className="text-[#3C763D] bg-[#DFF0D8] font-bold rounded p-2 text-xl tablet:text-2xl tabletmd:text-3xl">
+          जग्गाको विवरण 
+          </p>
+          <span className="text-[#000000] font-light mobile:text-base tablet:text-xl"></span>
+        </div>
+      <form className="grid-1 grid-1 border-green-200 border-2 p-3 rounded-lg " onSubmit={handleSubmit}>
+        <div className="text-[#000000] grid tablet:grid-cols-4 gap-4 mt-3 tabletmd:mt-5">
+        <div className="relative gap-2 flex flex-col ">
+        <p className="font-bold">स्वामित्व ( जग्गा धनी )
+            जग्गाको किसिम:</p>
+            <select
+              className="border-[#D0D7E2] border-2 flex rounded-lg px-1 py-1 tablet:px-2 tablet:py-3"
+              name="जग्गाको किसिम"
+              value={formData['जग्गाको किसिम']}
+              onChange={handleChange}
+            >
+              <option value="">एउटा छनौट गर्नुहोस्</option>
+              <option value="आफ्नो">आफ्नो</option>
+              <option value=" अरुको"> अरुको</option>
+            </select>
+          </div>
+          <div className="relative gap-2 flex flex-col">
+            <p className="font-bold">स्वामित्व ( जग्गा धनी )</p>
+            <input
+              className="border-[#D0D7E2] border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3"
+              type="text"
+              placeholder="आफ्नो/परिवारको"
+              name="स्वामित्व"
+              value={formData['स्वामित्व']}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="relative gap-2 flex flex-col">
+            <p className="font-bold"> जमिनको किसिम:</p>
+            <input
+              className="border-[#D0D7E2] border-2 flex rounded-lg px-1 py-1 tablet:px-2 tablet:py-3"
+              type="text"
+              placeholder="खेत/पाखो/बारी"
+              name="जमिनको किसिम"
+              value={formData["जमिनको किसिम"]}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="relative gap-2 flex flex-col">
+            <p className="font-bold">क्षेत्रफल: </p>
+            <input
+              className="border-[#D0D7E2] border-2 flex rounded-lg px-1 py-1 tablet:px-2 tablet:py-3"
+              type="text"
+              placeholder="बिघा-कठ्ठा-धुर"
+              name="क्षेत्रफल"
+              value={formData['क्षेत्रफल']}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="relative gap-2 flex flex-col">
+            <p className="font-bold">लाल पुर्जाको फोटो:</p>
+            <input
+              className="border-[#D0D7E2] border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3"
+              type="file"
+              name="लाल पुर्जाको फोटो"
+              onChange={handleChange}
+            />
+           
+          </div>
+        </div>
+        <div className="gap-2 flex p-3">
+        <Link to={"/admin/family-detail"} >
+            <button
+              className="  flex gap-2 items-center px-4 py-2 text-white bg-red-500"
+            >
+              <FaArrowLeft className="" />
+              पारिवारिक विवरण
+            </button>
+          </Link>
+          <Link to={"/admin/add-irrigation-detail"}>
+            <button
+              className="  flex gap-2 items-center px-4 py-2 text-white bg-[#3C763D]"
+              type="submit"
+            >
+         सिँचाइ विवरण
+              <FaArrowRight className="" />
+            </button>
+          </Link>
+        </div>
+        
+      </form>
+    </div>
+  );
+};
+
+export default AddLandDetail;

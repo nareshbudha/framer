@@ -1,0 +1,281 @@
+import React, { useState } from "react";
+import jsPDF from "jspdf";
+import Calendars from "../../../../Dashboard/Components/Calendars";
+import { Link } from "react-router-dom";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+("");
+
+const AddPersonalInfo = () => {
+  const [formData, setFormData] = useState({
+    "परिचय पत्र नं": "",
+    "नागरिकता न.": "",
+    नाम: "",
+    लिङ्ग: "",
+    "मोबाइल न": "",
+    "जन्म मिति": "",
+    "शैक्षिक योग्यता": "",
+    "नागरिकता जारी जिल्ला": "",
+    "कृषि कार्यको क्षेत्र": "",
+    "तपाईं वार्षिक औसत कति महिना कृषि कार्यमा संलग्न हुनुहुन्छ?": "",
+    "पासपोर्ट साइजको फोटो": "",
+    "नागरीकताको फोटो":"",
+  });
+
+
+  const [tableData, setTableData] = useState([]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
+  const handleDateChange = (name, date) => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: date,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setTableData((prevTableData) => [...prevTableData, formData]);
+    setFormData({
+      "परिचय पत्र नं": "",
+      "नागरिकता न.": "",
+      नाम: "",
+      लिङ्ग: "",
+      "मोबाइल न": "",
+      "जन्म मिति": "",
+      "शैक्षिक योग्यता": "",
+      "नागरिकता जारी जिल्ला": "",
+      "कृषि कार्यको क्षेत्र": "",
+      "तपाईं वार्षिक औसत कति महिना कृषि कार्यमा संलग्न हुनुहुन्छ?": "",
+      "पासपोर्ट साइजको फोटो": "",
+      "नागरीकताको फोटो":"",
+    });
+  };
+  //     const doc = new jsPDF();
+  //     let yOffset = 10;
+
+  //     // Format form data
+  //     const formattedFormData = Object.entries(formData).map(
+  //       ([fieldName, value]) => {
+  //         return `${fieldName}: ${value}`;
+  //       }
+  //     );
+
+  //     // Format table data
+  //     const formattedTableData = tableData.map((data, index) => {
+  //       return `Entry ${index + 1}:\n${Object.entries(data)
+  //         .map(([key, value]) => `${key}: ${value}`)
+  //         .join("\n")}`;
+  //     });
+
+  //     // Add form data to PDF
+  //     doc.text("Form Data:", 10, yOffset);
+  //     formattedFormData.forEach((data) => {
+  //       yOffset += 10;
+  //       doc.text(data, 10, yOffset);
+  //     });
+
+  //     // Add table data to PDF
+  //     yOffset += 10;
+  //     doc.text("Table Data:", 10, yOffset);
+  //     formattedTableData.forEach((data) => {
+  //       yOffset += 10;
+  //       doc.text(data, 10, yOffset);
+  //     });
+
+  //     // Save PDF
+  //     doc.save("form_data.pdf");
+  //   };
+
+  return (
+    <div className="flex flex-col justify-between gap-5 px-5 laptop:px-0 m-10 max-w-[1800px]">
+      <div className="flex flex-col gap-2">
+        <p className="text-[#3C763D] bg-[#DFF0D8] p-3 font-bold rounded text-xl tablet:text-2xl">
+          व्यक्तिगत विवरण
+        </p>
+      </div>
+      <form
+        className="grid-1 border-green-200 border-2 p-3 rounded-lg "
+        onSubmit={handleSubmit}
+      >
+        <div className="text-[#000000] grid tablet:grid-cols-4 gap-4 p-3">
+          {/* Form fields */}
+          <div className="relative gap-2 flex flex-col">
+            <p className="font-semibold text-sm tablet:text-base tablet:font-bold">
+              परिचय पत्र नं:
+            </p>
+            <input
+              className="border-[#D0D7E2] border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3 text-sm tablet:text-base"
+              type="number"
+              name="परिचय पत्र नं"
+              value={formData["परिचय पत्र नं"]}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="relative gap-2 flex flex-col">
+            <p className="font-semibold text-sm tablet:text-base tablet:font-bold">
+              नागरिकता न.:
+            </p>
+            <input
+              className="border-[#D0D7E2] border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3 text-sm tablet:text-base"
+              type="number"
+              name="नागरिकता न."
+              value={formData["नागरिकता न."]}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="relative gap-2 flex flex-col">
+            <p className="font-semibold text-sm tablet:text-base tablet:font-bold">
+              नाम:
+            </p>
+            <input
+              className="border-[#D0D7E2] border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3 text-sm tablet:text-base"
+              type="text"
+              placeholder="नरेश"
+              name="नाम"
+              value={formData["नाम"]}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="relative gap-2 flex flex-col">
+            <p className="font-semibold text-sm tablet:text-base tablet:font-bold">
+              लिङ्ग:
+            </p>
+            <select
+              className="border-[#D0D7E2] border-[1px] flex flex-col rounded-xl px-1 py-1 text-sm tablet:text-base tabletmd:px-2 tabletmd:py-3"
+              name="लिङ्ग"
+              value={formData["लिङ्ग"]}
+              onChange={handleChange}
+            >
+              <option value="">Select an option</option>
+              <option value="पुरुष">पुरुष</option>
+              <option value="महिला">महिला</option>
+              <option value="अन्य">अन्य</option>
+            </select>
+          </div>
+          <div className="relative gap-2 flex flex-col">
+            <p className="font-semibold text-sm tablet:text-base tablet:font-bold">
+              मोबाइल नं:
+            </p>
+            <input
+              className="border-[#D0D7E2] border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3 text-sm tablet:text-base"
+              type="text"
+              name="मोबाइल न"
+              value={formData["मोबाइल न"]}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="relative gap-2 flex flex-col">
+            <p className="font-semibold text-sm tablet:text-base tablet:font-bold">
+              जन्म मिति:
+            </p>
+            <Calendars
+              name="जन्म मिति"
+              value={formData["जन्म मिति"]}
+              onChange={handleDateChange}
+            />
+          </div>
+          <div className="relative gap-2 flex flex-col">
+            <p className="font-semibold text-sm tablet:text-base tablet:font-bold">
+              शैक्षिक योग्यता:
+            </p>
+            <input
+              className="border-[#D0D7E2] border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3 text-sm tablet:text-base"
+              type="text"
+              name="शैक्षिक योग्यता"
+              value={formData["शैक्षिक योग्यता"]}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="relative gap-2 flex flex-col">
+            <p className="font-semibold text-sm tablet:text-base tablet:font-bold">
+              नागरिकता जारी जिल्ला:
+            </p>
+            <input
+              className="border-[#D0D7E2] border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3 text-sm tablet:text-base"
+              type="text"
+              name="नागरिकता जारी जिल्ला"
+              value={formData["नागरिकता जारी जिल्ला"]}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="relative gap-2 flex flex-col">
+            <p className="font-semibold text-sm tablet:text-base tablet:font-bold">
+              कृषि कार्यको क्षेत्र:
+            </p>
+            <input
+              className="border-[#D0D7E2] border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3 text-sm tablet:text-base"
+              type="text"
+              name="कृषि कार्यको क्षेत्र"
+              value={formData["कृषि कार्यको क्षेत्र"]}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="relative gap-2 flex flex-col">
+            <p className="font-semibold text-sm tablet:text-base tablet:font-bold">
+              तपाईं वार्षिक औसत कति महिना कृषि कार्यमा संलग्न हुनुहुन्छ? :
+            </p>
+            <input
+              className="border-[#D0D7E2] border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3 text-sm tablet:text-base"
+              type="text"
+              name="तपाईं वार्षिक औसत कति महिना कृषि कार्यमा संलग्न हुनुहुन्छ?"
+              value={
+                formData[
+                  "तपाईं वार्षिक औसत कति महिना कृषि कार्यमा संलग्न हुनुहुन्छ?"
+                ]
+              }
+              onChange={handleChange}
+            />
+          </div>
+          <div className="relative gap-2 flex flex-col">
+            <p className="font-bold">पासपोर्ट साइजको फोटो:</p>
+            <input
+              className="border-[#D0D7E2] border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3"
+              type="file"
+              name="पासपोर्ट साइजको फोटो"
+              onChange={handleChange}
+            />
+           
+          </div>
+          <div className="relative gap-2 flex flex-col">
+            <p className="font-bold">नागरीकताको फोटो:</p>
+            <input
+              className="border-[#D0D7E2] border-2 rounded-lg px-1 py-1 tablet:px-2 tablet:py-3"
+              type="file"
+              name="नागरीकताको फोटो"
+              onChange={handleChange}
+            />
+         
+          </div>
+        </div>
+        <div className="gap-2 flex">
+          <Link to={"/admin/farmer-information"}>
+            <button
+              className="  flex gap-2 items-center px-4 py-2 text-white bg-red-500"
+            >
+              <FaArrowLeft className="" />
+              किसान जानकारी
+            </button>
+          </Link>
+          <Link to={"/admin/add-farmer-address"} className="flex ">
+            <button
+              className="  flex gap-2 items-center px-4 py-2 text-white bg-[#3C763D]"
+              type="submit"
+            >
+              किसानको ठेगाना
+              <FaArrowRight className="" />
+            </button>
+          </Link>
+        </div>
+      </form>
+    </div>
+  );
+};
+
+export default AddPersonalInfo;
